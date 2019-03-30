@@ -13,7 +13,7 @@ class GoogleMap extends Component {
 
         return (
             <Map google={this.props.google} 
-                zoom={12}
+                zoom={10}
                 style={styles}
                 initialCenter={{lat, lng}}>
                 <Marker
@@ -26,5 +26,5 @@ class GoogleMap extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyAq06l5RUVfib62IYRQacLc-KAy0XIWAVs'
+    apiKey: 'YOUR API KEY'
   })(GoogleMap)

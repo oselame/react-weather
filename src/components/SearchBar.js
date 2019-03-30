@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions';
 
 class SearchBar extends Component {
@@ -25,7 +24,7 @@ class SearchBar extends Component {
         return (
             <form className="input-group" onSubmit={this.onFormSubmit}>
                 <input 
-                    placeholder="Get a five-day forecast in your favorite cities"
+                    placeholder="Get a five-day forecast in your favorite cities in Brazil"
                     className="form-control"
                     value={this.state.term}
                     onChange={this.onInputChante}
@@ -39,8 +38,4 @@ class SearchBar extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({fetchWeather}, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(null, {fetchWeather})(SearchBar);
